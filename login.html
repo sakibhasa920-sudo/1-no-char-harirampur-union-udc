@@ -47,18 +47,48 @@
     .login-box button:hover {
       background-color: #45a049;
     }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
 
   <div class="login-box">
     <h2>লগ ইন করুন</h2>
-    <form action="#" method="post">
-      <input type="text" name="username" placeholder="ইউজারনেম" required>
-      <input type="password" name="password" placeholder="পাসওয়ার্ড" required>
+    <form onsubmit="return checkLogin()">
+      <input type="text" id="username" placeholder="ইউজারনেম" required>
+      <input type="password" id="password" placeholder="পাসওয়ার্ড" required>
       <button type="submit">লগ ইন</button>
+      <div class="error" id="errorMsg"></div>
     </form>
   </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      // একাধিক ইউজার এবং তাদের আলাদা আলাদা পেজ
+      const users = {
+        "admin": { pass: "1234", page: "admin.html" },
+        "user1": { pass: "1111", page: "user1.html" },
+        "user2": { pass: "2222", page: "user2.html" },
+        "shakib": { pass: "3333", page: "shakib.html" }
+      };
+
+      if (users[user] && users[user].pass === pass) {
+        window.location.href = users[user].page;
+        return false;
+      } else {
+        errorMsg.textContent = "ইউজারনেম বা পাসওয়ার্ড ভুল!";
+        return false;
+      }
+    }
+  </script>
 
 </body>
 </html>
