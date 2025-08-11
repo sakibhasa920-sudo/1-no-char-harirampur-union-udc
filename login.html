@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>লগইন</title>
+<meta charset="UTF-8">
+<title>লগইন পেজ</title>
+<style>
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+    input { margin: 10px; padding: 5px; width: 200px; }
+    button { padding: 5px 15px; cursor: pointer; }
+</style>
 </head>
 <body>
-    <h1>লগইন পেজ</h1>
-    <form action="#" method="post">
-        <label>ইউজারনেম:</label>
-        <input type="text" name="username" required><br><br>
-        
-        <label>পাসওয়ার্ড:</label>
-        <input type="password" name="password" required><br><br>
-        
-        <button type="submit">লগইন</button>
-    </form>
+<h2>লগইন পেজ</h2>
+<input type="text" id="username" placeholder="ইউজারনেম"><br>
+<input type="password" id="password" placeholder="পাসওয়ার্ড"><br>
+<button onclick="login()">লগইন</button>
+
+<p id="message" style="color:red;"></p>
+
+<script>
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+        window.location.href = "index.html"; // সফল হলে হোম পেজে যাবে
+    } else {
+        document.getElementById("message").innerText = "ভুল ইউজারনেম বা পাসওয়ার্ড!";
+    }
+}
+</script>
 </body>
 </html>
