@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<title>লগইন পেজ</title>
-<style>
-    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-    input { margin: 10px; padding: 5px; }
-    button { padding: 5px 15px; cursor: pointer; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগইন পেজ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<h2>লগইন পেজ</h2>
-<input type="text" id="username" placeholder="ইউজারনেম"><br>
-<input type="password" id="password" placeholder="পাসওয়ার্ড"><br>
-<button onclick="login()">লগইন</button>
-
-<p id="message" style="color:red;"></p>
-
-<script>
-function login() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
-
-    if (user === "admin" && pass === "1234") {
-        window.location.href = "index.html"; // সফল হলে হোম পেজে যাবে
-    } else {
-        document.getElementById("message").innerText = "ভুল ইউজারনেম বা পাসওয়ার্ড!";
-    }
-}
-</script>
+    <div class="login-box">
+        <h2>লগইন করুন</h2>
+        <form action="dashboard.html" method="post">
+            <input type="text" name="username" placeholder="ইউজারনেম" required>
+            <input type="password" name="password" placeholder="পাসওয়ার্ড" required>
+            <button type="submit">লগইন</button>
+        </form>
+        <a href="index.html">← হোম পেজে ফিরুন</a>
+    </div>
 </body>
 </html>
