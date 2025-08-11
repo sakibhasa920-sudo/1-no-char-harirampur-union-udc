@@ -328,7 +328,21 @@
 </section>
 
 <section id="service-application" style="padding: 40px; background-color: #f9f9f9;">
- 
+  <h2 style="text-align: center; color: #1d3557; font-size: 28px; margin-bottom: 30px;">সেবা আবেদন করুন</h2>
+
+  <!-- আবেদন বাটন -->
+  <div style="text-align: center;">
+    <button onclick="toggleForm()" style="background-color: #28a745; color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 6px; cursor: pointer;">
+      সেবা আবেদন করুন
+    </button>
+  </div>
+
+  <!-- গুগল ফর্ম (শুরুতে লুকানো) -->
+  <div id="googleFormContainer" style="display: none; margin-top: 30px;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchjqy4Uu0tmoJqVndJQf02dApeiebmW0KjHA7qetOn1MwUpw/viewform?embedded=true"
+            width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+      লোড হচ্ছে…
+    </iframe>
   </div>
 </section>
 
@@ -341,7 +355,11 @@
       formContainer.scrollIntoView({ behavior: "smooth" });
     } else {
       formContainer.style.display = "none";
-</section>
+    }
+  }
+</script>
+
+  </section>
 
   <section id="recent-news" style="padding: 40px; background-color: #f9f9f9;">
   <h2 style="text-align: center; color: #1a237e; font-size: 28px; margin-bottom: 30px;">সাম্প্রতিক খবর</h2>
