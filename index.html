@@ -1,565 +1,416 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>১ নং চর হরিরামপুর ইউনিয়ন পরিষদ সেবা</title>
-  <style>
-    body {
-      font-family: 'Noto Sans Bengali', Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f5f9ff;
-      color: #333;
-    }
-    header {
-      position: relative;
-      color: white;
-      padding: 40px 20px 90px 20px;
-      text-align: center;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg') no-repeat center center;
-      background-size: cover;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-    header p.address {
-      font-size: 1.3rem;
-      margin: 5px 0 15px 0;
-      font-weight: 600;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-    header p.slogan {
-      font-size: 1.5rem;
-      margin: 0 0 15px 0;
-      font-weight: 700;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-    .notice-bar marquee {
-      font-family: 'Noto Sans Bengali', Arial, sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background: rgba(0,0,0,0.5);
-      padding: 8px 0;
-      border-radius: 6px;
-      max-width: 600px;
-      margin: 0 auto;
-      display: block;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>১ নং চর হরিরামপুর ইউনিয়ন পরিষদ সেবা</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background: #f5f9ff;
+            color: #333;
+        }
+        .header-bg {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg') no-repeat center center;
+            background-size: cover;
+            padding: 40px 20px 90px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .header-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Overlay for better text readability */
+        }
+        .header-content {
+            position: relative;
+            z-index: 10;
+        }
+        .header-content h1 {
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .header-content .address, .header-content .slogan {
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .notice-bar {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 8px 0;
+            border-radius: 6px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+            font-weight: 600;
+        }
+        .navbar-custom {
+            background-color: #f0f0f0;
+        }
+        .navbar-custom .nav-link {
+            font-weight: 700;
+            color: white !important;
+            border-radius: 6px;
+            transition: opacity 0.3s ease;
+        }
+        .navbar-custom .nav-link:hover {
+            opacity: 0.8;
+        }
+        .nav-link.service { background-color: #28a745; }
+        .nav-link.news { background-color: #007bff; }
+        .nav-link.contact { background-color: #ffc107; color: #333 !important; }
+        .nav-link.chairman { background-color: #17a2b8; }
+        .nav-link.complaint { background-color: #dc3545; }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 15px 0;
-      background: #f0f0f0;
-      font-weight: 700;
-      font-size: 1.1rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      padding: 10px 15px;
-      border-radius: 6px;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    nav a.service {
-      background-color: #28a745; /* সবুজ */
-    }
-    nav a.news {
-      background-color: #007bff; /* নীল */
-    }
-    nav a.contact {
-      background-color: #ffc107; /* হলুদ */
-      color: #333;
-    }
-    nav a.chairman {
-      background-color: #17a2b8; /* সায়ান */
-    }
-    nav a.complaint {
-      background-color: #dc3545; /* লাল */
-    }
-    nav a:hover {
-      opacity: 0.8;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-    h2 {
-      color: #007bff;
-    }
-    section {
-      margin-bottom: 30px;
-      background: white;
-      padding: 15px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      scroll-margin-top: 70px; /* navbar উচ্চতা অনুযায়ী সামঞ্জস্য */
-    }
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 8px;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    .service-list ul, .news-list ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    .contact-info p {
-      margin: 5px 0;
-    }
-    /* সেবা বিভাগে হিডেবল */
-    .service-list ul li button {
-      all: unset;
-      cursor: pointer;
-      font-size: 16px;
-      color: #007bff;
-      font-weight: bold;
-      padding: 5px 0;
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-    .service-details {
-      display: none;
-      margin-top: 8px;
-      padding-left: 20px;
-      color: #444;
-      font-size: 15px;
-    }
-    /* খবর বিভাগে হিডেবল */
-    .news-list ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .news-list ul li button {
-      all: unset;
-      cursor: pointer;
-      font-size: 18px;
-      color: #007bff;
-      font-weight: bold;
-      padding: 8px 0;
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-    .news-details {
-      display: none;
-      margin-top: 6px;
-      padding-left: 15px;
-      font-size: 16px;
-      color: #333;
-    }
-
-    /* চেয়ারম্যান প্রোফাইল স্টাইল */
-    #chairman-profile div {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    #chairman-profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  </style>
+        .container-main {
+            padding-top: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        .service-details, .news-content {
+            display: none;
+            padding-left: 1rem;
+            margin-top: 8px;
+            font-size: 15px;
+            color: #444;
+        }
+        .service-list .list-group-item button,
+        .news-section .list-group-item button {
+            all: unset;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #007bff;
+        }
+        .chairman-profile-card .profile-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+        .entrepreneur-card {
+            background-color: #f1f8e9;
+            border-left: 6px solid #8bc34a;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>১ নং চর হরিরামপুর ইউনিয়ন পরিষদ</h1>
-  <p class="address">চর ভদ্রাসন, ফরিদপুর</p>
-  <p class="slogan">আপনার সেবায়, সব সময় পাশে</p>
-  <div class="notice-bar">
-    <marquee behavior="scroll" direction="left" scrollamount="8">
-      ইউনিয়ন পরিষদ আপনার সেবায় সর্বদা প্রস্তুত। আমরা পাশে আছি আপনার প্রতিটি প্রয়োজনে।
-    </marquee>
-  </div>
+<header class="header-bg">
+    <div class="header-content">
+        <h1>১ নং চর হরিরামপুর ইউনিয়ন পরিষদ</h1>
+        <p class="address">চর ভদ্রাসন, ফরিদপুর</p>
+        <p class="slogan">আপনার সেবায়, সব সময় পাশে</p>
+        <div class="notice-bar">
+            <marquee behavior="scroll" direction="left" scrollamount="8">
+                ইউনিয়ন পরিষদ আপনার সেবায় সর্বদা প্রস্তুত। আমরা পাশে আছি আপনার প্রতিটি প্রয়োজনে।
+            </marquee>
+        </div>
+    </div>
 </header>
 
-<nav>
-  <a href="#services" class="service">সেবা</a>
-  <a href="#recent-news" class="news">খবর</a>
-  <a href="#entrepreneur-profile" class="contact">উদ্যোক্তার তথ্য</a>
-  <a href="#chairman-profile" class="chairman">চেয়ারম্যান</a>
-  <a href="#complaint" class="complaint">অভিযোগ</a>
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top p-0">
+    <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav gap-2 py-2">
+            <li class="nav-item">
+                <a class="nav-link service" href="#services">সেবা</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link news" href="#recent-news">খবর</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link contact" href="#entrepreneur-profile">উদ্যোক্তার তথ্য</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link chairman" href="#chairman-profile">চেয়ারম্যান</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link complaint" href="#complaint">অভিযোগ</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
-<div class="container">
+<div class="container container-main">
 
-  <section id="services" class="service-list">
-    <h2>আমাদের সেবা</h2>
-    <ul>
-      <li>
-        <button>জন্ম ও মৃত্যু নিবন্ধন</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জন্ম সনদ ফরম, পিতার জাতীয় পরিচয়পত্রের কপি, মায়ের জাতীয় পরিচয়পত্রের কপি, আবেদনের ফরম।</p>
-          <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+    <section id="services">
+        <h2>আমাদের সেবা</h2>
+        <div class="list-group service-list">
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>জন্ম ও মৃত্যু নিবন্ধন</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জন্ম সনদ ফরম, পিতার জাতীয় পরিচয়পত্রের কপি, মায়ের জাতীয় পরিচয়পত্রের কপি, আবেদনের ফরম।</p>
+                    <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>নাগরিক সনদ</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয়পত্রের ফটোকপি, মোবাইল নাম্বার, এক কপি ছবি, বাড়ির হোল্ডিং নাম্বার।</p>
+                    <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>চারিত্রিক সনদ</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: নাগরিক সনদের মতো একই কাগজপত্র প্রয়োজন।</p>
+                    <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>অবিবাহিত সনদ</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: নাগরিক সনদের মতো একই কাগজপত্র প্রয়োজন।</p>
+                    <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>ওয়ারিশ সার্টিফিকেট</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: ওয়ারিশদের মৃত্যু সনদ, সমস্ত ওয়ারিসগণের ভোটার আইডি কার্ডের ফটোকপি, মোবাইল নাম্বার, বাড়ির হোল্ডিং।</p>
+                    <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>মাতৃত্বকালীন ভাতা</span>
+                </button>
+                <div class="service-details">
+                    <p>বয়স সীমা: ২০ থেকে ৩৫ বছর</p>
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্র, স্বামীর জাতীয় পরিচয় পত্র, আল্টাসনোগ্রাম এর ফটোকপি, এএনসি রিপোর্ট, মোবাইল নাম্বার, ব্যাংক একাউন্ট।</p>
+                    <p>শর্তাবলী: প্রেগনেন্সির বয়স চার থেকে ছয় মাসের মধ্যে হতে হবে। সরকারের অন্য কোন কর্মসূচিতে অংশগ্রহণ থাকা যাবে না। প্রথম ও দ্বিতীয় বাচ্চার ক্ষেত্রে প্রযোজ্য।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>রেশন কার্ড</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্রের ফটোকপি, স্বামীর জাতীয় পরিচয় পত্রের ফটোকপি, মোবাইল নাম্বার।</p>
+                    <p>শর্তাবলী: অবশ্যই প্রার্থীর সরকারের অন্য কোন কর্মসূচিতে অংশগ্রহণ করা যাবে না।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>টি,সি,বি সেবা</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্র, স্বামীর জাতীয় পরিচয় পত্র, ভোক্তার নিজ ভোটার আইডি কার্ড দিয়ে নিবন্ধিত সিমের নাম্বার।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>নতুন জাতীয় পরিচয় পত্রের আবেদন</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জন্ম নিবন্ধন সনদ, পিতার ও মাতার জাতীয় পরিচয় পত্রের ফটোকপি, আবেদনের ফরম পূরণ।</p>
+                    <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>হারানো জাতীয় পরিচয় পত্র উত্তোলন</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
+                    <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>সাইন কপি</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
+                    <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="d-flex w-100 justify-content-between align-items-center">
+                    <span>সার্ভার কপি</span>
+                </button>
+                <div class="service-details">
+                    <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
+                    <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+                </div>
+            </div>
         </div>
-      </li>
-      <li>
-        <button>নাগরিক সনদ</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয়পত্রের ফটোকপি, মোবাইল নাম্বার, এক কপি ছবি, বাড়ির হোল্ডিং নাম্বার।</p>
-          <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+    </section>
+
+    <section id="application-form" class="bg-light p-4">
+        <h2 class="text-center">সেবা আবেদন ফর্ম</h2>
+        <div class="text-center mb-3">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSchjqy4Uu0tmoJqVndJQf02dApeiebmW0KjHA7qetOn1MwUpw/viewform?usp=dialog" class="btn btn-success btn-lg" target="_blank">
+                অনলাইনে আবেদন করুন
+            </a>
         </div>
-      </li>
-      <li>
-        <button>চারিত্রিক সনদ</button>
-        <div class="service-details">
-          <p>কাগজপত্র: নাগরিক সনদের মতো একই কাগজপত্র প্রয়োজন।</p>
-          <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+    </section>
+
+    <section id="recent-news" class="news-section">
+        <h2 class="text-center mb-4">সাম্প্রতিক খবর</h2>
+        <div class="list-group">
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>সরকারি উন্নয়ন প্রকল্পের অগ্রগতি</span>
+                </button>
+                <div class="news-content">
+                    উন্নয়ন প্রকল্পের জন্য নতুন তহবিল বরাদ্দ পেয়েছে ইউনিয়ন। রাস্তা নির্মাণ ও ড্রেনেজ সিস্টেম উন্নয়ন হচ্ছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>স্বাস্থ্য ও জনস্বাস্থ্য ক্যাম্পের বিজ্ঞপ্তি</span>
+                </button>
+                <div class="news-content">
+                    করোনা টিকা ক্যাম্প আগামী মাসে অনুষ্ঠিত হবে। সবার অংশগ্রহণ কাম্য।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>স্থানীয় উৎসব বা স্মরণীয় দিন উদযাপন</span>
+                </button>
+                <div class="news-content">
+                    ১৫ আগস্ট, মহান বিজয় দিবস সফলভাবে উদযাপিত হয়েছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>শিক্ষা ও ছাত্র ছাত্রী সম্পর্কিত খবর</span>
+                </button>
+                <div class="news-content">
+                    বিদ্যালয়ের বার্ষিক পরীক্ষা ও ভর্তি কার্যক্রম শুরু হয়েছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>কৃষি ও জীবিকার সংক্রান্ত আপডেট</span>
+                </button>
+                <div class="news-content">
+                    নতুন বীজ বিতরণ ও কৃষি প্রশিক্ষণ কর্মশালা অনুষ্ঠিত হয়েছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>স্থানীয় নিরাপত্তা ও আইন শৃঙ্খলা সংক্রান্ত খবর</span>
+                </button>
+                <div class="news-content">
+                    পুলিশ ক্যাম্পেইন ও সচেতনতা সভা হয়েছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>পরিবেশ ও প্রকৃতি সংরক্ষণ বিষয় সংবাদ</span>
+                </button>
+                <div class="news-content">
+                    গাছ লাগানো অভিযান ও নদী পরিষ্কার কর্মসূচি সম্পন্ন হয়েছে।
+                </div>
+            </div>
+            <div class="list-group-item">
+                <button class="news-toggle d-flex w-100 justify-content-between align-items-center">
+                    <span>সমাজসেবা ও কল্যাণমূলক কার্যক্রম</span>
+                </button>
+                <div class="news-content">
+                    দুঃস্থদের মাঝে ত্রাণ বিতরণ ও বয়স্কদের জন্য বিশেষ সেবা প্রদান করা হয়েছে।
+                </div>
+            </div>
         </div>
-      </li>
-      <li>
-        <button>অবিবাহিত সনদ</button>
-        <div class="service-details">
-          <p>কাগজপত্র: নাগরিক সনদের মতো একই কাগজপত্র প্রয়োজন।</p>
-          <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+    </section>
+
+    <section id="chairman-profile" class="chairman-profile-card text-center bg-light">
+        <h2>চেয়ারম্যান পরিচিতি</h2>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="profile-photo">
+                    <img src="https://via.placeholder.com/150" alt="চেয়ারম্যান" class="img-fluid rounded-circle mb-3">
+                    <h3>মোঃ জাহাঙ্গীর কবির</h3>
+                    <p class="text-muted">চেয়ারম্যান,<br>১নং চর হরিরামপুর ইউনিয়ন পরিষদ</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mt-3 mt-md-0">
+                <div class="card p-3 shadow-sm">
+                    <p class="mb-2"><strong>মোবাইল:</strong> <a href="tel:+8801912341670">০১৯১২৩৪১৬৭০</a></p>
+                    <p class="mb-0"><strong>ই-মেইল:</strong> <a href="mailto:chairman@example.com">chairman@example.com</a></p>
+                </div>
+            </div>
         </div>
-      </li>
-      <li>
-        <button>ওয়ারিশ সার্টিফিকেট</button>
-        <div class="service-details">
-          <p>কাগজপত্র: ওয়ারিশদের মৃত্যু সনদ, সমস্ত ওয়ারিসগণের ভোটার আইডি কার্ডের ফটোকপি, মোবাইল নাম্বার, বাড়ির হোল্ডিং।</p>
-          <p>আবেদনকারীর অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
+    </section>
+
+    <section id="entrepreneur-profile" class="entrepreneur-card p-4">
+        <h3 class="border-bottom pb-2 mb-3 text-success">📇 উদ্যোক্তার তথ্য</h3>
+        <p><strong>👤 নাম:</strong> মোঃ শাকিব হোসেন</p>
+        <p><strong>💼 পদবি:</strong> উদ্যোক্তা</p>
+        <p><strong>📍 ঠিকানা:</strong> ১ নং চর হরিরামপুর ইউনিয়ন পরিষদ কার্যালয়, চর ভদ্রাসন, ফরিদপুর</p>
+        <p><strong>⏰ অফিস সময়:</strong> প্রতিদিন সকাল ১১টা - দুপুর ২টা</p>
+        <p><strong>❌ সাপ্তাহিক ছুটি:</strong> শুক্রবার</p>
+    </section>
+
+    <section id="complaint" class="bg-light p-4">
+        <h2 class="text-center text-danger mb-4">অভিযোগ</h2>
+        <p class="text-center text-muted">আপনার কোন অভিযোগ বা পরামর্শ থাকলে নিচের ফরম পূরণ করুন অথবা সরাসরি ইউনিয়ন পরিষদ অফিসে যোগাযোগ করুন।</p>
+        <div class="text-center mt-3">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSchjqy4Uu0tmoJqVndJQf02dApeiebmW0KjHA7qetOn1MwUpw/viewform?usp=dialog" class="btn btn-danger btn-lg" target="_blank">
+                অভিযোগ জমা দিন
+            </a>
         </div>
-      </li>
-      <li>
-        <button>মাতৃত্বকালীন ভাতা</button>
-        <div class="service-details">
-          <p>বয়স সীমা: ২০ থেকে ৩৫ বছর</p>
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্র, স্বামীর জাতীয় পরিচয় পত্র, আল্টাসনোগ্রাম এর ফটোকপি, এএনসি রিপোর্ট, মোবাইল নাম্বার, ব্যাংক একাউন্ট।</p>
-          <p>শর্তাবলী: প্রেগনেন্সির বয়স চার থেকে ছয় মাসের মধ্যে হতে হবে। সরকারের অন্য কোন কর্মসূচিতে অংশগ্রহণ থাকা যাবে না। প্রথম ও দ্বিতীয় বাচ্চার ক্ষেত্রে প্রযোজ্য।</p>
-        </div>
-      </li>
-      <li>
-        <button>রেশন কার্ড</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্রের ফটোকপি, স্বামীর জাতীয় পরিচয় পত্রের ফটোকপি, মোবাইল নাম্বার।</p>
-          <p>শর্তাবলী: অবশ্যই প্রার্থীর সরকারের অন্য কোন কর্মসূচিতে অংশগ্রহণ করা যাবে না।</p>
-        </div>
-      </li>
-      <li>
-        <button>টি,সি,বি সেবা</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্র, স্বামীর জাতীয় পরিচয় পত্র, ভোক্তার নিজ ভোটার আইডি কার্ড দিয়ে নিবন্ধিত সিমের নাম্বার।</p>
-        </div>
-      </li>
-      <li>
-        <button>নতুন জাতীয় পরিচয় পত্রের আবেদন</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জন্ম নিবন্ধন সনদ, পিতার ও মাতার জাতীয় পরিচয় পত্রের ফটোকপি, আবেদনের ফরম পূরণ।</p>
-          <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
-        </div>
-      </li>
-      <li>
-        <button>হারানো জাতীয় পরিচয় পত্র উত্তোলন</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
-          <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
-        </div>
-      </li>
-      <li>
-        <button>সাইন কপি</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
-          <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
-        </div>
-      </li>
-      <li>
-        <button>সার্ভার কপি</button>
-        <div class="service-details">
-          <p>কাগজপত্র: জাতীয় পরিচয় পত্রের নাম্বার ও জন্ম তারিখ।</p>
-          <p>শর্ত: আবেদনকারীকে অবশ্যই নিজ ইউনিয়ন পরিষদের বাসিন্দা হতে হবে।</p>
-        </div>
-      </li>
-    </ul>
-   <button onclick="document.getElementById('application-form').scrollIntoView({behavior: 'smooth'});">সেবা আবেদন করুন</button>
-<section id="application-form" style="padding: 40px; background-color: #f9f9f9; max-width: 600px; margin: 40px auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: 'Noto Sans Bengali', sans-serif;">
-  <h2 style="color: #007bff; margin-bottom: 25px; text-align: center;">সেবা আবেদন ফর্ম</h2>
-  <form id="service-application-form" enctype="multipart/form-data">
-    <label for="name">নাম:</label><br />
-    <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 15px;" placeholder="আপনার পূর্ণ নাম লিখুন" required /><br />
-
-    <label for="mobile">মোবাইল নম্বর:</label><br />
-    <input type="tel" id="mobile" name="mobile" style="width: 100%; padding: 8px; margin-bottom: 15px;" placeholder="০১xxxxxxxxx" pattern="[0-9]{11}" required /><br />
-
-    <label for="service">সেবা নির্বাচন করুন:</label><br />
-    <select id="service" name="service" style="width: 100%; padding: 8px; margin-bottom: 15px;" required>
-      <option value="" disabled selected>সেবা নির্বাচন করুন</option>
-      <option value="birth_registration">জন্ম নিবন্ধন</option>
-      <option value="death_registration">মৃত্যু নিবন্ধন</option>
-      <option value="citizenship_certificate">নাগরিক সনদ</option>
-      <option value="character_certificate">চারিত্রিক সনদ</option>
-      <option value="unmarried_certificate">অবিবাহিত সনদ</option>
-      <option value="inheritance_certificate">ওয়ারিশ সার্টিফিকেট</option>
-      <option value="maternity_allowance">মাতৃত্বকালীন ভাতা</option>
-      <option value="ration_card">রেশন কার্ড</option>
-      <option value="new_nid_application">নতুন জাতীয় পরিচয়পত্রের আবেদন</option>
-    </select><br />
-
-    <label for="details">অতিরিক্ত তথ্য / মন্তব্য:</label><br />
-    <textarea id="details" name="details" rows="4" style="width: 100%; padding: 8px; margin-bottom: 20px;" placeholder="যদি কোনো বিশেষ তথ্য থাকে লিখুন"></textarea><br />
-
-    <label for="photo-upload">ছবি আপলোড করুন (JPEG, PNG):</label><br />
-    <input type="file" id="photo-upload" name="photo" accept="image/jpeg, image/png" style="margin-bottom: 10px;" /><br />
-    <small id="file-name" style="color: #555; margin-bottom: 15px; display: block;"></small>
-
-    <button type="submit" style="background: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%;">আবেদন পাঠান</button>
-  </form>
-</section>
-
-<section id="service-application" style="padding: 40px; background-color: #f9f9f9;">
-  <h2 style="text-align: center; color: #1d3557; font-size: 28px; margin-bottom: 30px;">সেবা আবেদন করুন</h2>
-
-  <!-- আবেদন বাটন -->
-  <div style="text-align: center;">
-    <button onclick="toggleForm()" style="background-color: #28a745; color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 6px; cursor: pointer;">
-      সেবা আবেদন করুন
-    </button>
-  </div>
-
-  <!-- গুগল ফর্ম (শুরুতে লুকানো) -->
-  <div id="googleFormContainer" style="display: none; margin-top: 30px;">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchjqy4Uu0tmoJqVndJQf02dApeiebmW0KjHA7qetOn1MwUpw/viewform?embedded=true"
-            width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-      লোড হচ্ছে…
-    </iframe>
-  </div>
-</section>
-
-<!-- ফর্ম দেখানো/লুকানোর জন্য স্ক্রিপ্ট -->
-<script>
-  function toggleForm() {
-    const formContainer = document.getElementById("googleFormContainer");
-    if (formContainer.style.display === "none") {
-      formContainer.style.display = "block";
-      formContainer.scrollIntoView({ behavior: "smooth" });
-    } else {
-      formContainer.style.display = "none";
-    }
-  }
-</script>
-
-  </section>
-
-  <section id="recent-news" style="padding: 40px; background-color: #f9f9f9;">
-  <h2 style="text-align: center; color: #1a237e; font-size: 28px; margin-bottom: 30px;">সাম্প্রতিক খবর</h2>
-  <div style="max-width: 800px; margin: 0 auto;">
-    <button class="news-toggle" style="width: 100%; background-color: #e3f2fd; color: #0d47a1; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">সরকারি উন্নয়ন প্রকল্পের অগ্রগতি</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">উন্নয়ন প্রকল্পের জন্য নতুন তহবিল বরাদ্দ পেয়েছে ইউনিয়ন। রাস্তা নির্মাণ ও ড্রেনেজ সিস্টেম উন্নয়ন হচ্ছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #e8f5e9; color: #1b5e20; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">স্বাস্থ্য ও জনস্বাস্থ্য ক্যাম্পের বিজ্ঞপ্তি</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">করোনা টিকা ক্যাম্প আগামী মাসে অনুষ্ঠিত হবে। সবার অংশগ্রহণ কাম্য।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #fff8e1; color: #f57f17; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">স্থানীয় উৎসব বা স্মরণীয় দিন উদযাপন</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">১৫ আগস্ট, মহান বিজয় দিবস সফলভাবে উদযাপিত হয়েছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #f3e5f5; color: #6a1b9a; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">শিক্ষা ও ছাত্র ছাত্রী সম্পর্কিত খবর</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">বিদ্যালয়ের বার্ষিক পরীক্ষা ও ভর্তি কার্যক্রম শুরু হয়েছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #ede7f6; color: #4527a0; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">কৃষি ও জীবিকার সংক্রান্ত আপডেট</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">নতুন বীজ বিতরণ ও কৃষি প্রশিক্ষণ কর্মশালা অনুষ্ঠিত হয়েছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #e0f7fa; color: #006064; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">স্থানীয় নিরাপত্তা ও আইন শৃঙ্খলা সংক্রান্ত খবর</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">পুলিশ ক্যাম্পেইন ও সচেতনতা সভা হয়েছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #fbe9e7; color: #bf360c; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">পরিবেশ ও প্রকৃতি সংরক্ষণ বিষয় সংবাদ</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">গাছ লাগানো অভিযান ও নদী পরিষ্কার কর্মসূচি সম্পন্ন হয়েছে।</div>
-
-    <button class="news-toggle" style="width: 100%; background-color: #edeff1; color: #263238; padding: 12px; margin-bottom: 10px; border: none; text-align: left; font-size: 16px;">সমাজসেবা ও কল্যাণমূলক কার্যক্রম</button>
-    <div class="news-content" style="display: none; padding: 10px; background-color: #fff; border: 1px solid #ccc;">দুঃস্থদের মাঝে ত্রাণ বিতরণ ও বয়স্কদের জন্য বিশেষ সেবা প্রদান করা হয়েছে।</div>
-  </div>
-</section>
-
-<section id="chairman-profile">
-  <h2>চেয়ারম্যান পরিচিতি</h2>
-  <div class="profile-container">
-    <div class="profile-photo">
-      <img src="images/chairman.jpg" alt="চেয়ারম্যান">
-      <h3>মোঃ জাহাঙ্গীর কবির</h3>
-      <p>চেয়ারম্যান,<br>১নং চর হরিরামপুর ইউনিয়ন পরিষদ</p>
-    </div>
-    <div class="profile-contact">
-      <p><strong>মোবাইল:</strong> <a href="tel:+8801912341670">০১৯১২৩৪১৬৭০</a></p>
-      <p><strong>ই-মেইল:</strong> <a href="mailto:chairman@example.com">chairman@example.com</a></p>
-    </div>
-  </div>
-</section>
-
-<style>
-  #chairman-profile {
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #e0f0ff, #c2dbf5);
-    font-family: 'Noto Sans Bengali', sans-serif;
-    color: #1d3557;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(29, 53, 87, 0.15);
-  }
-
-  #chairman-profile h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-  }
-
-  .profile-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profile-photo {
-    flex: 1 1 250px;
-    text-align: center;
-  }
-
-  .profile-photo img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 5px solid #007bff;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-    transition: transform 0.3s ease;
-  }
-  .profile-photo img:hover {
-    transform: scale(1.05);
-  }
-
-  .profile-photo h3 {
-    margin-top: 18px;
-    font-size: 26px;
-    color: #007bff;
-    font-weight: 700;
-  }
-
-  .profile-photo p {
-    font-size: 17px;
-    color: #333;
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-
-  .profile-contact {
-    flex: 1.5 1 350px;
-    font-size: 18px;
-    color: #444;
-    background: #ffffffcc;
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(29, 53, 87, 0.1);
-  }
-
-  .profile-contact p {
-    margin-bottom: 20px;
-  }
-
-  .profile-contact strong {
-    color: #007bff;
-  }
-
-  .profile-contact a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .profile-contact a:hover {
-    color: #004a99;
-    text-decoration: underline;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .profile-container {
-      flex-direction: column;
-    }
-
-    .profile-contact {
-      width: 100%;
-      padding: 20px;
-    }
-  }
-</style>
-
-<section id="entrepreneur-profile" style="padding: 30px 15px; background-color: #f1f8e9; font-family: 'Noto Sans Bengali', sans-serif;">
-  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-left: 6px solid #8bc34a; border-radius: 8px; padding: 20px 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-    <h3 style="color: #33691e; font-size: 22px; margin-bottom: 15px; border-bottom: 1px solid #c5e1a5; padding-bottom: 5px;">📇 উদ্যোক্তার তথ্য</h3>
-    <p style="margin: 8px 0;"><strong>👤 নাম:</strong> মোঃ শাকিব হোসেন</p>
-    <p style="margin: 8px 0;"><strong>💼 পদবি:</strong> উদ্যোক্তা</p>
-    <p style="margin: 8px 0;"><strong>📍 ঠিকানা:</strong> ১ নং চর হরিরামপুর ইউনিয়ন পরিষদ কার্যালয়, চর ভদ্রাসন, ফরিদপুর</p>
-    <p style="margin: 8px 0;"><strong>⏰ অফিস সময়:</strong> প্রতিদিন সকাল ১১টা - দুপুর ২টা</p>
-    <p style="margin: 8px 0;"><strong>❌ সাপ্তাহিক ছুটি:</strong> শুক্রবার</p>
-  </div>
-</section>
-
-<section id="complaint" style="padding: 40px; background-color: #f9f9f9;">
-  <h2 style="text-align: center; color: #b71c1c; font-size: 28px; margin-bottom: 30px;">অভিযোগ</h2>
-  <div style="max-width: 600px; margin: 0 auto; font-size: 16px; color: #555;">
-    <p>আপনার কোন অভিযোগ বা পরামর্শ থাকলে নিচের ফরম পূরণ করুন অথবা সরাসরি ইউনিয়ন পরিষদ অফিসে যোগাযোগ করুন।</p>
-    <form>
-      <label for="name">নাম:</label><br />
-      <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br />
-      <label for="email">ইমেইল:</label><br />
-      <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br />
-      <label for="message">অভিযোগ/পরামর্শ:</label><br />
-      <textarea id="message" name="message" rows="5" style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br />
-      <button type="submit">পাঠান</button>
-    </form>
-  </div>
-</section>
+    </section>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // সেবা তালিকার ডিটেইল দেখানোর জন্য
-  document.querySelectorAll('.service-list ul li button').forEach(button => {
-    button.addEventListener('click', () => {
-      const details = button.nextElementSibling;
-      if(details.style.display === 'block'){
-        details.style.display = 'none';
-      } else {
-        details.style.display = 'block';
-      }
+    // Toggle service details
+    document.querySelectorAll('.service-list .list-group-item button').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.nextElementSibling;
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+            } else {
+                details.style.display = 'block';
+            }
+        });
     });
-  });
 
-  // খবর টগল করার জন্য
-  document.querySelectorAll('.news-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-      if(content.style.display === 'block'){
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'block';
-      }
+    // Toggle news content
+    document.querySelectorAll('.news-section .news-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
     });
-  });
 </script>
 
 </body>
